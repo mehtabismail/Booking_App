@@ -1,0 +1,12 @@
+export {default as Splash} from './SplashScreen/Splash';
+export {default as Front} from './FrontScreen/Front';
+export {default as Home} from './HomeScreen/Home';
+export {default as SignIn} from './Authentication/LoginScreen/Login';
+export {default as SignUp} from './Authentication/SignUpScreen/SignUp';
+export {default as AirPortTransfer} from './AirPortTransfers/AirPortTransfer';
+export {default as ApartmentsBooking} from './ApartmentsBooking/ApartmentsBooking';
+export {default as COVID} from './COVID/COVID';
+export {default as Flights} from './Flights/Flights';
+export {default as Guide} from './GuideScreen/Guide';
+export {default as HotelBooking} from './HotelBooking/HotelBooking';
+export {default as Tours} from './Tours(Packages)/Tours';
