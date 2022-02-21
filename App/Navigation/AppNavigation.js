@@ -16,6 +16,7 @@ import {
   HotelBooking,
   Tours,
 } from '../Screens';
+import Colors from '../Theme/Colors';
 
 const Stack = createNativeStackNavigator();
 
@@ -69,13 +70,29 @@ const AppNavigation = () => {
         <Stack.Screen
           name={navigationStrings.COVID}
           component={COVID}
-          options={{headerShown: false}}
+          options={{
+            title: 'COVID Details',
+            headerStyle: {
+              backgroundColor: Colors.background,
+            },
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
         />
         {/* FLIGHTS SCREEN */}
         <Stack.Screen
           name={navigationStrings.FLIGHTS}
           component={Flights}
-          options={{headerShown: false}}
+          options={{
+            title: 'Flights',
+            headerStyle: {
+              backgroundColor: Colors.background,
+            },
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
         />
         {/* GUIDE SCREEN */}
         <Stack.Screen
@@ -87,13 +104,29 @@ const AppNavigation = () => {
         <Stack.Screen
           name={navigationStrings.HOTEL_BOOKING}
           component={HotelBooking}
-          options={{headerShown: false}}
+          options={{
+            title: 'Hotel Booking',
+            headerStyle: {
+              backgroundColor: Colors.background,
+            },
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
         />
         {/* TOURS (PACKAGES) SCREEN */}
         <Stack.Screen
           name={navigationStrings.TOURS}
           component={Tours}
-          options={{headerShown: false}}
+          options={{
+            title: 'Tours',
+            headerStyle: {
+              backgroundColor: Colors.background,
+            },
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

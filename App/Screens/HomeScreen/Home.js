@@ -8,11 +8,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {Avatar, Card, Icon, Image, Input} from 'react-native-elements';
+import navigationStrings from '../../Constants/navigationStrings';
 import Colors from '../../Theme/Colors';
 import Fonts from '../../Theme/Fonts';
 import metrics from '../../Theme/metrics';
 
-const Home = () => {
+const Home = ({navigation}) => {
   var [searchItem, setSearchItem] = useState('');
   var [name, setName] = useState('Robert');
   var [data, setData] = useState(null);
@@ -154,7 +155,8 @@ const Home = () => {
           flexDirection: 'row',
           justifyContent: 'space-around',
         }}>
-        <View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate(navigationStrings.FLIGHTS)}>
           <View style={styles.card}>
             <Image
               style={styles.listIcons}
@@ -164,8 +166,9 @@ const Home = () => {
           <View style={styles.listIconsStyle}>
             <Text>Flight</Text>
           </View>
-        </View>
-        <View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate(navigationStrings.HOTEL_BOOKING)}>
           <View style={styles.card}>
             <Image
               style={styles.listIcons}
@@ -175,29 +178,31 @@ const Home = () => {
           <View style={styles.listIconsStyle}>
             <Text>Hotel</Text>
           </View>
-        </View>
-        <View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate(navigationStrings.TOURS)}>
           <View style={styles.card}>
             <Image
               style={styles.listIcons}
-              source={require('../../assets/Icons/bus.png')}
+              source={require('../../assets/Icons/place.png')}
             />
           </View>
           <View style={styles.listIconsStyle}>
-            <Text>Bus</Text>
+            <Text>Tours</Text>
           </View>
-        </View>
-        <View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate(navigationStrings.COVID)}>
           <View style={styles.card}>
             <Image
               style={styles.listIcons}
-              source={require('../../assets/Icons/train.png')}
+              source={require('../../assets/Icons/covid.png')}
             />
           </View>
           <View style={styles.listIconsStyle}>
-            <Text>Train</Text>
+            <Text>COVID</Text>
           </View>
-        </View>
+        </TouchableOpacity>
       </View>
       <View style={{backgroundColor: 'green'}}></View>
 
@@ -236,18 +241,21 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#D5D5D5',
+    backgroundColor: Colors.background,
   },
   profileContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    paddingLeft: metrics.basePadding,
     paddingHorizontal: metrics.regularPadding,
     paddingTop: metrics.basePadding,
   },
-  profileText: {fontSize: Fonts.size.regular},
+  profileText: {
+    fontSize: Fonts.size.regular,
+  },
   captionContainer: {
-    paddingHorizontal: metrics.regularPadding,
+    paddingHorizontal: metrics.basePadding,
     paddingBottom: metrics.basePadding,
   },
   captainText: {
